@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color:sienna;
+    color:sienna;
+}
+
+/* nav */
+header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color:rgb(253, 224, 187);
+}
+li {
+    display: inline-block;
+    margin:30px 20px 30px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+a {
+    color: sienna;
+    display: flex;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+a:hover {
+    transform: scale(1.25,1.25);
+}
+
+/* general text headings */
+h1 {
+    font-size: 240px;
+    margin: 0 30px 0 30px;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 20px;
+}
+
+/* quote section */
+#opener {
+    scroll-margin-top: 80px;
+    background-image: url(images/chai.jpeg);
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: 100vh;
+    color: rgb(253, 224, 187);
+}
+.quote {
+    position: relative;
+    top: -50px;
+    left: 5%;
+    width: 40%;
+}
+
+/* facts section */
+#facts {
+    scroll-margin-top: 80px;
+    background-color: rgb(253, 224, 187);
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+width: 85%;
+margin:0 auto 0 auto;
+}
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    background-image: url(images/hand1_tea_cutout.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 375px;
+}
+.div2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    margin: 0 30px 0 30px;
+    align-content: center;
+    padding-top: 50px;
+}
+.div3 { 
+    grid-area: 1 / 3 / 2 / 4;
+    margin: 0 30px 0 30px; 
+    align-content: center;
+    padding-top: 50px;
+}
+.div4 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    margin: 0 30px 0 30px;
+    align-content: center;
+}
+.div5 { 
+    grid-area: 2 / 2 / 3 / 3; 
+    margin: 0 30px 0 30px;
+    align-content: center;
+}
+.div6 { 
+    grid-area: 2 / 3 / 3 / 4; 
+    background-image: url(images/hand2_tea_cutout.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 390px;
+}
+
+/* video section */
+#videos {
+    scroll-margin-top: 80px;
+    background-image: url(images/closeup.png);
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: top;
+    
+}
+iframe {
+    margin: 150px 50px;
+}
+.flex-area {
+    /*display flex always goes on parent*/
+    display: flex;
+
+    flex-direction: row;
+
+    /*centering horizontally*/
+    justify-content: center;
+    
+    /*centering vertically*/
+    align-items: center;
+
+}
+.flex-column {
+    width: 25%;
+    margin: 0 30px;
+}
+
+/* spices section */
+#spices {
+    scroll-margin-top: 80px;
+    color: rgb(253, 224, 187);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+#spices h1 {
+    margin: 0;
+}
+#spices h2 {
+    font-size: 40px;
+    margin: -90px 0 0 0;
+}
+/* CINNAMON */
+.cinnamontext {
+    position: absolute;
+    top: 50px;
+    left: 350px;
+    opacity: 0;
+    z-index: 15;
+}
+.cinnamon1 {
+    background-image: url(images/cinnamon.png);
+    width: 550px;
+    height: 550px;
+    background-size:contain;
+    position: absolute;
+    z-index: 10;
+    top: -40px;
+    left: -70px;
+    transform: rotate(20deg);
+}
+@keyframes rotatecinnamon1 {
+    0% {transform: rotate(20deg);}
+    50% {transform: rotate(30deg);}
+    100% {transform: rotate(20deg);}
+}
+.cinnamon2 {
+    background-image: url(images/cinnamon.png);
+    width: 500px;
+    height: 500px;
+    background-size:contain;
+    position: absolute;
+    z-index: 9;
+    top: -30px;
+    left: -40px;
+    transform: rotate(-15deg);
+}
+@keyframes rotatecinnamon2 {
+    0% {transform: rotate(-15deg);}
+    50% {transform: rotate(-30deg);}
+    100% {transform: rotate(-15deg);}
+}
+.allcinnamon:hover .cinnamontext {
+    opacity:1;
+}
+.allcinnamon:hover .cinnamon1{
+    animation: rotatecinnamon1 0.5s;
+}
+.allcinnamon:hover .cinnamon2 {
+    animation: rotatecinnamon2 0.5s;
+}
+/* STAR ANISE */
+.staranisetext {
+    position: absolute;
+    top: 150px;
+    left: 700px;
+    opacity: 0;
+    z-index: 15;
+}
+.staranise1 {
+    background-image: url(images/staranise.png);
+    width: 200px;
+    height: 200px;
+    background-size:contain;
+    position: absolute;
+    top: 150px;
+    left: 400px;
+}
+@keyframes spinstaranise1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.staranise2 {
+    background-image: url(images/staranise.png);
+    width: 150px;
+    height: 150px;
+    background-size:contain;
+    position: absolute;
+    top: 120px;
+    left: 550px;
+    transform: rotate(-15deg);
+}
+@keyframes spinstaranise2 {
+    0% {transform: rotate(-15deg);}
+    100% {transform: rotate(-375deg);}
+}
+.staranise3 {
+    background-image: url(images/staranise.png);
+    width: 250px;
+    height: 250px;
+    background-size:contain;
+    position: absolute;
+    top: -100px;
+    left: 700px;
+    transform: rotate(-30deg);
+}
+@keyframes spinstaranise3 {
+    0% {transform: rotate(-30deg);}
+    100% {transform: rotate(-390deg);}
+}
+.staranise4 {
+    background-image: url(images/staranise.png);
+    width: 220px;
+    height: 220px;
+    background-size:contain;
+    position: absolute;
+    top: -30px;
+    left: 850px;
+    transform: rotate(15deg);
+}
+@keyframes spinstaranise4 {
+    0% {transform: rotate(15deg);}
+    100% {transform: rotate(375deg);}
+}
+.staranise5 {
+    background-image: url(images/staranise.png);
+    width: 120px;
+    height: 120px;
+    background-size:contain;
+    position: absolute;
+    top: 0px;
+    left: 600px;
+    transform: rotate(40deg);
+}
+@keyframes spinstaranise5 {
+    0% {transform: rotate(40deg);}
+    100% {transform: rotate(400deg);}
+}
+.staranise6 {
+    background-image: url(images/staranise.png);
+    width: 120px;
+    height: 120px;
+    background-size:contain;
+    position: absolute;
+    top: 180px;
+    left: 800px;
+    transform: rotate(40deg);
+}
+@keyframes spinstaranise6 {
+    0% {transform: rotate(40deg);}
+    100% {transform: rotate(400deg);}
+}
+.allstaranise:hover .staranisetext {
+    opacity: 1;
+}
+.allstaranise:hover .staranise1 {
+    animation: spinstaranise1 1s;
+}
+.allstaranise:hover .staranise2 {
+    animation: spinstaranise2 1s;
+}
+.allstaranise:hover .staranise3 {
+    animation: spinstaranise3 1s;
+}
+.allstaranise:hover .staranise4 {
+    animation: spinstaranise4 1s;
+}
+.allstaranise:hover .staranise5 {
+    animation: spinstaranise5 1s;
+}
+.allstaranise:hover .staranise6 {
+    animation: spinstaranise6 1s;
+}
+/* CARDAMOM */
+.cardamomtext {
+    position: absolute;
+    top: 220px;
+    right: 290px;
+    opacity: 0;
+    z-index: 15;
+}
+.cardamom {
+    background-image: url(images/cardamom.png);
+    width: 400px;
+    height: 400px;
+    background-size:contain;
+    position: absolute;
+    top: -70px;
+    right: -80px;
+}
+@keyframes shakecardamom {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(5deg) scale(1.1, 1.1);}
+    50% {transform: rotate(0deg) scale(1, 1);}
+    75% {transform: rotate(-5deg) scale(1.1, 1.1);}
+    100% {transform: rotate(0deg) scale(1, 1);}
+}
+.allcardamom:hover .cardamomtext {
+    opacity: 1;
+}
+.allcardamom:hover .cardamom {
+    animation: shakecardamom 0.5s;
+}
+/* BLACK PEPPER */
+.peppertext {
+    position: absolute;
+    bottom: 300px;
+    left: 30px;
+    opacity: 0;
+    z-index: 15;
+}
+.pepper {
+    background-image: url(images/pepper.png);
+    width: 420px;
+    height: 420px;
+    background-size:contain;
+    position: absolute;
+    bottom: -100px;
+    left: -80px;
+}
+@keyframes rotatepepper {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.allpepper:hover .peppertext {
+    opacity: 1;
+}
+.allpepper:hover .pepper{
+    animation: rotatepepper 10s;
+}
+/* CLOVES */
+.clovestext {
+    position: absolute;
+    bottom: 130px;
+    left: 830px;
+    opacity: 0;
+    z-index: 15;
+}
+.cloves {
+    background-image: url(images/cloves.png);
+    width: 500px;
+    height: 500px;
+    background-size:contain;
+    position: absolute;
+    bottom: -180px;
+    left: 400px;
+    transform: rotate(60deg);
+}
+@keyframes shakecloves {
+    0% {transform: rotate(60deg);}
+    25% {transform: rotate(65deg) scale(1.1, 1.1);}
+    50% {transform: rotate(60deg) scale(1, 1);}
+    75% {transform: rotate(55deg) scale(1.1, 1.1);}
+    100% {transform: rotate(60deg) scale(1, 1);}
+}
+.allcloves:hover .clovestext {
+    opacity: 1;
+}
+.allcloves:hover .cloves {
+    animation: shakecloves 0.4s;
+}
+/* GINGER */
+.gingertext {
+    position: absolute;
+    bottom: 200px;
+    right: 330px;
+    opacity: 0;
+    z-index: 15;
+}
+.ginger {
+    background-image: url(images/ginger.png);
+    width: 490px;
+    height: 490px;
+    background-size:contain;
+    position: absolute;
+    bottom: -80px;
+    right: -60px;
+    transform: rotate(5deg);
+}
+@keyframes moveginger {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(15deg);}
+    100% {transform: rotate(0deg);}
+}
+.allginger:hover .gingertext{
+    opacity: 1;
+}
+.allginger:hover .ginger{
+    animation: moveginger 0.5s 2;
+}
+
+/* poem section */
+#poem {
+    background-color: rgb(253, 224, 187);
+    width:100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+#poem h2 {
+    font-size: 60px;
+}
+#poem h3 {
+    margin-bottom: 20px;
+}
+#poem p{
+    font-size: 18px;
+    line-height: 2;
+}
+.text {
+    text-align: center;
+    position: relative;
+    left: 180px;
+    z-index: 15;
+    opacity: 0.1;
+    transition: all 7s;
+}
+.text:hover {
+    opacity:1;
+}
+@keyframes animatepoem {
+    0% {opacity: 0.1;}
+    100% {opacity: 1;}
+}
+.teacup {
+    background-image: url(images/teacup.png);
+    background-size:contain;
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    bottom: -120px;
+    right: -100px;
+    z-index: 10;
+}
+
+/* google fonts */
+.ruslan-display-regular {
+  font-family: "Ruslan Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.merriweather {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
